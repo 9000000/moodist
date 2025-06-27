@@ -4,7 +4,12 @@ on:
   push:
     tags:
       - '*'
-
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag for the Docker image (e.g., v1.0.0)'
+        required: true
+        
 jobs:
   push-store-image:
     runs-on: ubuntu-latest
@@ -28,7 +33,7 @@ jobs:
 
       - name: 'Build and push Inventory Image'
         run: |
-          IMAGE_NAME="ghcr.io/remvze/moodist"
+          IMAGE_NAME="ghcr.io/9000000/moodist"
 
           GIT_TAG=${{ github.ref }}
           GIT_TAG=${GIT_TAG#refs/tags/}
