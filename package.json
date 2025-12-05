@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:android": "npm run build && npx cap sync android",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
@@ -25,6 +26,9 @@
   },
   "dependencies": {
     "@astrojs/react": "3.6.0",
+    "@capacitor/android": "7.4.4",
+    "@capacitor/cli": "7.4.4",
+    "@capacitor/core": "7.4.4",
     "@floating-ui/react": "0.26.0",
     "@formkit/auto-animate": "0.8.2",
     "@radix-ui/react-checkbox": "1.1.4",
